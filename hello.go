@@ -28,9 +28,12 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	fmt.Println(quote.Go())
 	fmt.Println("My favorite number is", rand.Intn(19))
-	fmt.Println(add(555, 111))
+	fmt.Println(add(555, rand.Intn(111)))
 }
 
-func add(x int, y int) int {
+//func add(x int, y int) int
+// when two or more consecutive named function parameters
+// share a type, you can omit the typ from all but the last.
+func add(x, y int) int {
 	return x + y
 }
