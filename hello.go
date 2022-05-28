@@ -13,6 +13,9 @@ package main
  */
 import (
 	"fmt"
+	"time"
+
+	"math/rand"
 
 	"rsc.io/quote"
 )
@@ -22,5 +25,12 @@ import (
 * A main function executes by default when you run the main package.
  */
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	fmt.Println(quote.Go())
+	fmt.Println("My favorite number is", rand.Intn(19))
+	fmt.Println(add(555, 111))
+}
+
+func add(x int, y int) int {
+	return x + y
 }
