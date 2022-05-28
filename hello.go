@@ -29,6 +29,11 @@ func main() {
 	fmt.Println(quote.Go())
 	fmt.Println("My favorite number is", rand.Intn(19))
 	fmt.Println(add(555, rand.Intn(111)))
+	var x int = rand.Intn(555)
+	var y int = rand.Intn(111)
+	x, y = split(add(x, y))
+	fmt.Printf("after split:\nx: %v, y: %v\n", x, y)
+	fmt.Println()
 }
 
 //func add(x int, y int) int
@@ -36,4 +41,10 @@ func main() {
 // share a type, you can omit the typ from all but the last.
 func add(x, y int) int {
 	return x + y
+}
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
 }
